@@ -92,7 +92,7 @@ use of X windows, diacritics, and vim.
 
 .. csv-table::
 
-    `     PAUS, UP,   DEL,  **-**,            =,    KP 3, KP 4, [,    ]
+    `,    PAUS, UP,   DEL,  **-**,            =,    KP 3, KP 4, [,    ]
     PGUP, LEFT, DOWN, RGHT, HOME,             1,    2,    3,    4,    5
     PGDN, KP 1, KP 2, CAPS, END,              6,    7,    8,    9,    0
 
@@ -116,8 +116,7 @@ Some other notes
 * I excluded keys that I would never purposely use.
 * The shift key is on the left side, and the layout is mostly split such that
   the right side contains the keys that are often pressed with shift.
-* The bold minus ("-") key becomes the bootloader key when reset mode is
-  entered.
+* The minus ("-") key becomes the bootloader key when reset mode is entered.
 
 Bottom row
 -----------
@@ -169,9 +168,9 @@ and then you can reset the firmware. The keys are in bold below.
 
 .. csv-table::
 
-    q, w, e, r, **t**,                 ,     ,  y, u, i, o, p
-    a, s, d, f, g,                     ,     ,  h, j, k, l, ;
-    z, x, c, v, b,                     ,     ,  n, m, ",", ., /
-    ESC, **RESET**,RGUI,RSFT,BSPC,RCTL,RALT,TAB, **FN**, \\,PRSN,ENT
+    Q, W, E, R, **T**,           ,    ,     Y, U, I, O, P
+    A, S, D, F, G,               ,    ,     H, J, K, L, ;
+    Z, X, C, V, B,               ,    ,     N, M, ",", ., /
+    ESC, **RESET**,RGUI,RSFT,BSPC,RCTL,RALT,TAB, **FN**,\\,PRSN,ENT
 
 The implementation of this feature is discussed in earlier sections.
