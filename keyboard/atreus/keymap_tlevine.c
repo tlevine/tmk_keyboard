@@ -38,10 +38,10 @@
 #define N9 KC_9
 #define N0 KC_0
 
-#define UP   KC_UP
-#define LEFT KC_LEFT
-#define RGHT KC_RIGHT
-#define DOWN KC_DOWN
+#define NORT KC_UP
+#define WEST KC_LEFT
+#define EAST KC_RIGHT
+#define SOUT KC_DOWN
 #define PGUP KC_PGUP
 #define PGDN KC_PGDOWN
 #define HOME KC_HOME
@@ -66,14 +66,14 @@
 #define GRV  KC_GRAVE
 #define QUOT KC_QUOTE
 
-#define LCTL KC_LCTRL
-#define LSFT KC_LSHIFT
-#define LALT KC_LALT
-#define LGUI KC_LGUI
-#define RCTL KC_RCTRL
-#define RSFT KC_RSHIFT
-#define RALT KC_RALT
-#define RGUI KC_RGUI
+#define CTL1 KC_LCTRL
+#define SFT1 KC_LSHIFT
+#define ALT1 KC_LALT
+#define GUI1 KC_LGUI
+#define CTL2 KC_RCTRL
+#define SFT2 KC_RSHIFT
+#define ALT2 KC_RALT
+#define GUI2 KC_RGUI
 #define CAPS KC_CAPSLOCK
 
 #define K_SL KC_KP_SLASH
@@ -92,12 +92,14 @@
 
 // Internal
 #define TT   KC_TRANSPARENT
+#define RST  KC_FN2
 #define FUNC KC_FN1
-#define RST  KC_FN0
+#define BOOT KC_FN0
 
 const uint16_t PROGMEM fn_actions[] = {
   [0] = ACTION_FUNCTION(BOOTLOADER), // Bootloader
   [1] = ACTION_LAYER_MOMENTARY(1),   // Function overlay
+  [2] = ACTION_LAYER_MOMENTARY(2),   // Reset overlay
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -111,7 +113,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   KEYMAP(KQ,   KW,   KE,   KR,   KT,               KY,   KU,   KI,   KO,   KP,    \
          KA,   KS,   KD,   KF,   KG,               KH,   KJ,   KK,   KL,   SCLN,  \
          KZ,   KX,   KC,   KV,   KB,               KN,   KM,   COMM, DOT,  SLSH,  \
-         ESC,  K_SL, LGUI, LSFT, BSPC, LCTL, LALT, SPC,  FUNC, QUOT, COM1, K_EN), \
+         ESC,  K_SL, GUI1, SFT2, BSPC, CTL1, ALT1, SPC,  FUNC, QUOT, COM1, K_EN), \
 
   /* 1: Punctuation
  
@@ -120,10 +122,20 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     pgdn  opt1   opt2  caps  end       6     7     8     9     0
 
   */
-  KEYMAP(GRV,  COM3, UP,   DEL,  MINS,             EQL,  OPT3, OPT4, LBRC, RBRC, \
-         PGUP, LEFT, DOWN, RGHT, HOME,             N1,   N2,   N3,   N4,   N5,   \
-         PGDN, OPT1, OPT2, CAPS, END,              N6,   N7,   N8,   N9,   N0,   \
-         TT,   RST,  RGUI, RSFT, BSPC, RCTL, RALT, TAB,  TT,   BSLS, COM2, ENT)
+  KEYMAP(GRV,  COM3, NORT, DEL,  MINS,             EQL,  OPT3, OPT4, LBRC, RBRC,  \
+         PGUP, WEST, SOUT, EAST, HOME,             N1,   N2,   N3,   N4,   N5,    \
+         PGDN, OPT1, OPT2, CAPS, END,              N6,   N7,   N8,   N9,   N0,    \
+         TT,   RST,  GUI2, SFT2, BSPC, CTL2, ALT2, TAB,  TT,   BSLS, COM2, ENT),  \
+
+  /* 2: Reset
+   
+    Same as above, except that there is a reset button
+
+  */
+  KEYMAP(TT,   TT,   TT,   TT,   BOOT,             TT,   TT,   TT,   TT,   TT,    \
+         TT,   TT,   TT,   TT,   TT,               TT,   TT,   TT,   TT,   TT,    \
+         TT,   TT,   TT,   TT,   TT,               TT,   TT,   TT,   TT,   TT,    \
+         TT,   TT,   TT,   TT,   TT,   TT,   TT,   TT,   TT,   TT,   TT,   TT)
 };
 
 void action_function(keyrecord_t *record, uint8_t id, uint8_t opt)
