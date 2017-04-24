@@ -171,7 +171,7 @@ and then you can reset the firmware. The keys are in bold below.
 
     q, w, e, r, *t*,                   ,     ,  y, u, i, o, p
     a, s, d, f, g,                     ,     ,  h, j, k, l, ;
-    z, x, c, v, b,                     ,     ,  n, m,"," ., /
+    z, x, c, v, b,                     ,     ,  n, m, ",", ., /
     ESC, *RESET*,RGUI, RSFT, BSPC, RCTL, RALT,  TAB,  *FN*,  \\,   PRSN, ENT
 
 The implementation of this feature is discussed in earlier sections.
