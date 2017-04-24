@@ -86,9 +86,9 @@
 
 // Programmable
 #define OPT1 KC_KP_1
-#define OPT2 KC_KP_1
-#define OPT3 KC_KP_1
-#define OPT4 KC_KP_1
+#define OPT2 KC_KP_2
+#define OPT3 KC_KP_3
+#define OPT4 KC_KP_4
 
 // Internal
 #define TT   KC_TRANSPARENT
@@ -109,9 +109,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   */
   KEYMAP(KQ,   KW,   KE,   KR,   KT,               KY,   KU,   KI,   KO,   KP,    \
-         KA,   KS,   KD,   KF,   KG,               KH,   KJ,   KK,   KL,   KS,    \
-         KZ,   KX,   KC,   KV,   KB,               KN,   KM,   COMM, DOT,  KZ,    \
-         ESC,  K_SL, LGUI, LSFT, BSPC, LCTL, LALT, SPC,  FUNC, BSLS, COM1, K_EN), \
+         KA,   KS,   KD,   KF,   KG,               KH,   KJ,   KK,   KL,   SCLN,  \
+         KZ,   KX,   KC,   KV,   KB,               KN,   KM,   COMM, DOT,  SLSH,  \
+         ESC,  K_SL, LGUI, LSFT, BSPC, LCTL, LALT, SPC,  FUNC, QUOT, COM1, K_EN), \
 
   /* 1: Punctuation
  
@@ -123,7 +123,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   KEYMAP(GRV,  COM3, UP,   DEL,  MINS,             EQL,  OPT3, OPT4, LBRC, RBRC, \
          PGUP, LEFT, DOWN, RGHT, HOME,             N1,   N2,   N3,   N4,   N5,   \
          PGDN, OPT1, OPT2, CAPS, END,              N6,   N7,   N8,   N9,   N0,   \
-         TT,   RST,  RGUI, RSFT, BSPC, RCTL, RALT, TAB,  TT,   TT,   COM2, ENT)
+         TT,   RST,  RGUI, RSFT, BSPC, RCTL, RALT, TAB,  TT,   BSLS, COM2, ENT)
 };
 
 void action_function(keyrecord_t *record, uint8_t id, uint8_t opt)
